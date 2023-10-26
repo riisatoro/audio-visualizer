@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block body %}
+<header class="container is-fullhd has-background-light px-3 py-1">
+    <h1 class="is-size-4">Audio plots</h1>
+</header>
+<div class="container is-fullhd p-5">
+    <div class="field mt-5 columns">
+        <div class="column is-vcentered is-two-thirds">
+            <div class="is-size-2 mb-0 block">Upload .mp3 or .wav audio</div>
+            <span class="is-size-7 has-background-warning box">Multiple files selection enabled</span>
+        </div>
+        <div class="column is-vcentered">
+            <div class="control">
+                <form method="POST" action="/upload" class="file-form">
+                    <input class="input mb-3" type="file" id="files" name="files"
+                           placeholder="Upload .mp3 or .wav audio" accept=".mp3,.wav" multiple>
+                    <button class="button is-warning ml-auto" type="submit">Analyze</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

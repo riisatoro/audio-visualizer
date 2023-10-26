@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block body %}
+<header class="container is-fullhd has-background-light px-3 py-1">
+    <h1 class="is-size-4">Results</h1>
+</header>
+<div class="container is-fullhd p-5">
+    <a href="/" class="button bg-warning">Home</a>
+    <div class="field mt-5 columns is-centered">
+        <div class="column is-two-thirds has-text-centered">
+            {% for item in zip_files %}
+            <div class="columns box">
+                <h3 class="column">{{item.name}}</h3>
+                <audio controls class="column">
+                    <source src="{{item.original}}" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div>
+                <img src="{{item.url}}" />
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
